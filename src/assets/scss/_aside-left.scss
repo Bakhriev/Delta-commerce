@@ -1,0 +1,163 @@
+@import "./vars";
+
+.aside-left {
+	flex-shrink: 0;
+	max-width: 220px;
+	width: 100%;
+	height: 100vh;
+	padding: 20px 30px;
+	display: flex;
+	flex-direction: column;
+	z-index: 2;
+
+	background-color: #fff;
+
+	border-right: 1px solid $gray;
+}
+
+.aside-left {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	&__logo {
+		margin-bottom: 20px;
+
+		font-weight: 600;
+		font-size: 22px;
+		text-align: center;
+	}
+
+	// All Items Sort-Rating-Price
+	&__item {
+	}
+
+	// Fot Position
+	&__price {
+		border-bottom: 1px solid rgb(221, 214, 214);
+		padding-bottom: 20px;
+	}
+
+	&__color {
+		border-bottom: 1px solid rgb(221, 214, 214);
+		padding-bottom: 20px;
+	}
+
+	&__rating {
+	}
+}
+
+.price {
+	&__title {
+		margin-bottom: 20px;
+	}
+
+	&__list {
+	}
+
+	&__list-item {
+	}
+}
+
+.color {
+	&__title {
+		margin-bottom: 20px;
+	}
+
+	&__list {
+	}
+
+	&__list-item {
+	}
+
+	&__list-circle {
+		height: 12px;
+		width: 12px;
+		border-radius: 50%;
+	}
+	&__list-circle--black {
+		background-color: #000;
+	}
+	&__list-circle--blue {
+		background-color: blue;
+	}
+	&__list-circle--red {
+		background-color: red;
+	}
+	&__list-circle--multi {
+		position: relative;
+		background-color: yellow;
+		overflow: hidden;
+
+		&::before {
+			content: "";
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			width: 100%;
+			height: 4px;
+			background-color: green;
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			width: 100%;
+			height: 4px;
+			background-color: aqua;
+		}
+	}
+
+	&__list-color {
+	}
+}
+.rating {
+	&__title {
+		margin-bottom: 20px;
+	}
+	&__list {
+	}
+
+	&__list-item {
+	}
+}
+
+input[type="checkbox"] {
+	display: grid;
+	place-content: center;
+	appearance: none;
+	background-color: #fff;
+	margin: 0;
+	font: inherit;
+	color: currentColor;
+	width: 15px;
+	height: 15px;
+	border: 1px solid #222;
+	border-radius: 2px;
+	cursor: pointer;
+}
+
+input[type="checkbox"]::before {
+	content: "";
+	width: 0.65em;
+	height: 0.65em;
+	transform: scale(0);
+	transition: 120ms transform ease-in-out;
+	box-shadow: inset 1em 1em #222;
+}
+
+input[type="checkbox"]::before {
+	content: "";
+	width: 0.65em;
+	height: 0.65em;
+	transform: scale(0);
+	transition: 120ms transform ease-in-out;
+	box-shadow: inset 1em 1em #222;
+}
+
+input[type="checkbox"]:checked::before {
+	transform: scale(1);
+}

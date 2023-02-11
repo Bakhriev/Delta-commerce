@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Taviraj:wght@400;600&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="assets/css/main.min.css" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div class="flex">
+			<aside class="aside-left">
+				<a href="#" class="logo aside-left__logo">Delta</a>
+
+				<div class="price aside-left__price aside-left__item">
+					<h6 class="price__title title">Price</h6>
+					<ul class="price__list sort-list">
+						<li class="price__list-item sort-list__item">
+							<input type="checkbox" name="price" id="price1" />
+							<label for="price1">$0 - $50</label>
+						</li>
+						<li class="price__list-item sort-list__item">
+							<input type="checkbox" name="price" id="price2" />
+							<label for="price2">$50 - $100</label>
+						</li>
+						<li class="price__list-item sort-list__item">
+							<input type="checkbox" name="price" id="price3" />
+							<label for="price3">$100 - $150</label>
+						</li>
+						<li class="price__list-item sort-list__item">
+							<input type="checkbox" name="price" id="price4" />
+							<label for="price4">Over $150</label>
+						</li>
+					</ul>
+				</div>
+
+				<div class="color aside-left__color aside-left__item">
+					<h6 class="color__title title">Color</h6>
+					<ul class="color__list sort-list">
+						<li class="color__list-item sort-list__item">
+							<div class="color__list-circle color__list-circle--black"></div>
+							<div class="color__list-color">Black</div>
+						</li>
+						<li class="color__list-item sort-list__item">
+							<div class="color__list-circle color__list-circle--blue"></div>
+							<div class="color__list-color">Blue</div>
+						</li>
+						<li class="color__list-item sort-list__item">
+							<div class="color__list-circle color__list-circle--red"></div>
+							<div class="color__list-color">Red</div>
+						</li>
+						<li class="color__list-item sort-list__item">
+							<div class="color__list-circle color__list-circle--multi"></div>
+							<div class="color__list-color">Multicolor</div>
+						</li>
+					</ul>
+				</div>
+
+				<div class="rating aside-left__rating aside-left__item">
+					<h6 class="rating__title title">Rating</h6>
+					<ul class="rating__list sort-list">
+						<li class="rating__list-item sort-list__item">
+							<input type="checkbox" name="star" id="star5" />
+							<label for="star5">5 star</label>
+						</li>
+						<li class="rating__list-item sort-list__item">
+							<input type="checkbox" name="star" id="star4" />
+							<label for="star4">4 star</label>
+						</li>
+						<li class="rating__list-item sort-list__item">
+							<input type="checkbox" name="star" id="star3" />
+							<label for="star3">3 star</label>
+						</li>
+					</ul>
+				</div>
+			</aside>
+
+			<div class="wrapper">
+				<div class="overlay"></div>
+				<header class="header">
+					<div class="container">
+						<div class="header__inner">
+							<div class="header__navigation">
+								<nav class="header__menu menu">
+									<ul class="menu__body">
+										<li class="menu__item">
+											<a href="#" class="menu__link active">Home</a>
+										</li>
+										<li class="menu__item">
+											<a href="#" class="menu__link">Man</a>
+										</li>
+										<li class="menu__item">
+											<a href="#" class="menu__link">Woman</a>
+										</li>
+										<li class="menu__item">
+											<a href="#" class="menu__link">Kids</a>
+										</li>
+									</ul>
+								</nav>
+								<div class="header__actions">
+									<div class="header__search">
+										<svg class="search">
+											<use
+												xlink:href="./assets/img/icons/sprite.svg#search"
+											></use>
+										</svg>
+										<input
+											type="text"
+											name="search-input"
+											id="search-input"
+											placeholder="Enter your search shoes..."
+										/>
+										<div class="header__search-close">
+											<svg class="close">
+												<use
+													xlink:href="./assets/img/icons/sprite.svg#close"
+												></use>
+											</svg>
+										</div>
+									</div>
+									<button class="btn header__btn" aria-label="Go to favotires">
+										<svg class="like">
+											<use
+												xlink:href="./assets/img/icons/sprite.svg#like"
+											></use>
+										</svg>
+									</button>
+								</div>
+							</div>
+							<div class="burger">
+								<span></span>
+							</div>
+						</div>
+					</div>
+				</header>
+				<main class="main"></main>
+				<footer class="footer"></footer>
+			</div>
+		</div>
+
+		<script src="./assets//js/main.min.js"></script>
+	</body>
+</html>

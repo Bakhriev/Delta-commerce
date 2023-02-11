@@ -1,0 +1,152 @@
+@import "./vars";
+
+// header
+.header {
+	padding: 20px 0;
+	background-color: #fff;
+	max-width: 100%;
+	width: 100%;
+	border-bottom: 1px solid $gray;
+
+	&__inner {
+		display: flex;
+		align-items: center;
+
+		@media screen and (max-width: 768px) {
+			justify-content: space-between; //чтобы лого и бургер были по углам это их обертка
+		}
+	}
+
+	&__navigation {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		width: 100%;
+
+		&.active {
+			opacity: 1;
+			transform: translateX(0);
+		}
+
+		@media screen and (max-width: 768px) {
+			position: fixed;
+			right: 0;
+			top: 0;
+			margin-left: 0;
+			z-index: 10;
+
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: flex-start;
+
+			padding: 100px 0 0 40px;
+			width: 250px;
+			min-height: 100vh;
+
+			background-color: rgba(31, 41, 55, 0.9);
+
+			opacity: 0;
+			border-radius: 5px 0 0 5px;
+			transform: translateX(400px);
+			transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
+
+			-webkit-box-shadow: -6px 0px 24px -1px rgba(44, 51, 56, 0.15);
+			-moz-box-shadow: -6px 0px 24px -1px rgba(44, 51, 56, 0.15);
+			box-shadow: -6px 0px 24px -1px rgba(44, 51, 56, 0.15);
+		}
+	}
+
+	&__actions {
+		display: flex;
+		align-items: center;
+		gap: 20px;
+
+		@media screen and (max-width: 768px) {
+			margin-top: 30px; // даем отступ от .menu списка сверху
+
+			flex-direction: column; // Кнопки в столбик
+		}
+	}
+	&__search {
+		position: relative;
+		max-width: 300px;
+		&-close {
+			position: absolute;
+			right: 35px;
+			top: 50%;
+			transform: translateY(-50%);
+			cursor: pointer;
+		}
+		svg {
+			position: absolute;
+			top: 50%;
+			left: 10px;
+			transform: translateY(-50%);
+		}
+		input {
+			width: 100%;
+			background-color: rgba(208, 201, 201, 0.2);
+			padding: 5px 30px 5px 40px;
+			border-radius: 5px;
+		}
+	}
+}
+.menu {
+	margin-left: 40px;
+
+	@media screen and (max-width: 768px) {
+		margin-left: 0; // Убираем левый маржин при мобильном меню
+	}
+
+	&__body {
+		display: flex;
+		align-items: center;
+		gap: 20px;
+
+		@media screen and (max-width: 768px) {
+			flex-direction: column; // Кнопки в столбик
+		}
+	}
+
+	&__link {
+		position: relative;
+
+		color: $dark-gray;
+		transition: color 0.2s ease-in-out;
+
+		&.active {
+			color: #222;
+
+			&::after {
+				transform: scale(1);
+			}
+		}
+
+		&:hover {
+			color: #222;
+		}
+
+		&::after {
+			content: "";
+			position: absolute;
+			left: 0;
+			bottom: -6px;
+
+			height: 2px;
+			width: 100%;
+
+			background: #222;
+			border-radius: 5px;
+			transform-origin: right top;
+			transform: scale(0, 1);
+			transition: transform 200ms ease-in-out;
+		}
+
+		&:hover::after {
+			transform-origin: left top;
+			transform: scale(1, 1);
+		}
+	}
+}
