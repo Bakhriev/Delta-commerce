@@ -7,19 +7,21 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Taviraj:wght@400;600&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Taviraj:wght@400&display=swap"
 			rel="stylesheet"
 		/>
 		<link rel="stylesheet" href="assets/css/main.min.css" />
 		<title>Document</title>
 	</head>
 	<body>
+		<div class="overlay"></div>
+
 		<div class="flex">
 			<aside class="aside-left">
 				<a href="#" class="logo aside-left__logo">Delta</a>
 
 				<div class="price aside-left__price aside-left__item">
-					<h6 class="price__title title">Price</h6>
+					<h6 class="price__title sort-title">Price</h6>
 					<ul class="price__list sort-list">
 						<li class="price__list-item sort-list__item">
 							<input type="checkbox" name="price" id="price1" />
@@ -41,7 +43,7 @@
 				</div>
 
 				<div class="color aside-left__color aside-left__item">
-					<h6 class="color__title title">Color</h6>
+					<h6 class="color__title sort-title">Color</h6>
 					<ul class="color__list sort-list">
 						<li class="color__list-item sort-list__item">
 							<div class="color__list-circle color__list-circle--black"></div>
@@ -63,7 +65,7 @@
 				</div>
 
 				<div class="rating aside-left__rating aside-left__item">
-					<h6 class="rating__title title">Rating</h6>
+					<h6 class="rating__title sort-title">Rating</h6>
 					<ul class="rating__list sort-list">
 						<li class="rating__list-item sort-list__item">
 							<input type="checkbox" name="star" id="star5" />
@@ -82,10 +84,47 @@
 			</aside>
 
 			<div class="wrapper">
-				<div class="overlay"></div>
 				<header class="header">
+					<div class="cart">
+						<div class="cart__top">
+							<div class="cart__count">Cart (<span>5</span>)</div>
+							<div class="cart__clear">
+								<svg class="garbage">
+									<use xlink:href="./assets/img/icons/sprite.svg#garbage"></use>
+								</svg>
+								<span>Remove All</span>
+							</div>
+						</div>
+						<div class="cart__body">
+							<div class="cart-item">
+								<div class="cart-item__img">
+									<img
+										src="./assets/img/content/sneaker1.jpg"
+										alt="Balenciaga"
+									/>
+								</div>
+								<div class="cart-item__info">
+									<div class="cart-item__title">Balenciaga</div>
+									<div class="cart-item__price">$999</div>
+								</div>
+								<div class="cart-item__actions">
+									<span class="cart-item__minus cart-btn">-</span>
+									<span class="cart-item__count">0</span>
+									<span class="cart-item__plus cart-btn">+</span>
+								</div>
+							</div>
+						</div>
+						<div class="cart__payment">
+							<div class="cart__total-price">
+								<span>Total</span>
+								<span>$9999</span>
+							</div>
+							<button class="cart__payment-btn">Go to Payment</button>
+						</div>
+					</div>
 					<div class="container">
 						<div class="header__inner">
+							<div class="header__logo">Delta</div>
 							<div class="header__navigation">
 								<nav class="header__menu menu">
 									<ul class="menu__body">
@@ -103,35 +142,41 @@
 										</li>
 									</ul>
 								</nav>
-								<div class="header__actions">
-									<div class="header__search">
-										<svg class="search">
+							</div>
+							<div class="header__actions">
+								<div class="header__search">
+									<svg class="search">
+										<use
+											xlink:href="./assets/img/icons/sprite.svg#search"
+										></use>
+									</svg>
+									<input
+										type="text"
+										name="search-input"
+										id="search-input"
+										placeholder="Enter your search shoes..."
+									/>
+									<div class="header__search-close">
+										<svg class="close">
 											<use
-												xlink:href="./assets/img/icons/sprite.svg#search"
+												xlink:href="./assets/img/icons/sprite.svg#close"
 											></use>
 										</svg>
-										<input
-											type="text"
-											name="search-input"
-											id="search-input"
-											placeholder="Enter your search shoes..."
-										/>
-										<div class="header__search-close">
-											<svg class="close">
-												<use
-													xlink:href="./assets/img/icons/sprite.svg#close"
-												></use>
-											</svg>
-										</div>
 									</div>
-									<button class="btn header__btn" aria-label="Go to favotires">
-										<svg class="like">
-											<use
-												xlink:href="./assets/img/icons/sprite.svg#like"
-											></use>
-										</svg>
-									</button>
 								</div>
+								<button aria-label="Go to favotires">
+									<svg class="like">
+										<use xlink:href="./assets/img/icons/sprite.svg#like"></use>
+									</svg>
+								</button>
+								<button class="btn header__btn" aria-label="Open cart-icon">
+									<svg class="cart-icon">
+										<use
+											xlink:href="./assets/img/icons/sprite.svg#cart-icon"
+										></use>
+									</svg>
+									<span class="count header__btn-count">0</span>
+								</button>
 							</div>
 							<div class="burger">
 								<span></span>
@@ -139,8 +184,578 @@
 						</div>
 					</div>
 				</header>
-				<main class="main"></main>
-				<footer class="footer"></footer>
+				<main class="main">
+					<div class="container">
+						<h2 class="main__title title">Recomended</h2>
+						<div class="filter-wrapper">
+							<ul class="filter-menu">
+								<li class="filter-menu__item">All Products</li>
+								<li class="filter-menu__item">Nike</li>
+								<li class="filter-menu__item">Adidas</li>
+								<li class="filter-menu__item">Puma</li>
+								<li class="filter-menu__item">Vans</li>
+								<li class="filter-menu__item">Reebook</li>
+								<li class="filter-menu__item">Converse</li>
+								<li class="filter-menu__item">New Balance</li>
+							</ul>
+							<button class="filter-dropdown">
+								<span>Newest</span>
+								<svg class="arrow-bottom">
+									<use
+										xlink:href="./assets/img/icons/sprite.svg#arrow-bottom"
+									></use>
+								</svg>
+								<ul class="filter-dropdown__list">
+									<li class="filter-dropdown__list-item">Newest</li>
+									<li class="filter-dropdown__list-item">Oldest</li>
+									<li class="filter-dropdown__list-item">Popular</li>
+								</ul>
+							</button>
+						</div>
+						<div class="card-wrapper">
+							<div class="card">
+								<div class="card__img">
+									<svg class="like card__like active">
+										<use xlink:href="./assets/img/icons/sprite.svg#like"></use>
+									</svg>
+									<img
+										src="./assets/img/content/sneaker1.jpg"
+										alt="Balenciaga sneaker"
+									/>
+								</div>
+								<div class="card__info">
+									<h6 class="card__title">Balenciaga</h6>
+									<div class="card__rating-wrapper">
+										<div class="card__rating-icon">
+											<svg class="star">
+												<use
+													xlink:href="./assets/img/icons/sprite.svg#star"
+												></use>
+											</svg>
+										</div>
+										<div class="card__rating">4,9</div>
+										<div class="card__reviews">(123 reviews)</div>
+									</div>
+									<div class="card__price-wrapper">
+										<div class="card__old-price">$1100</div>
+										<div class="card__current-price">$999</div>
+										<button class="card__button active add-to-card">
+											<svg class="cart-icon">
+												<use
+													xlink:href="./assets/img/icons/sprite.svg#cart-icon"
+												></use>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card__img">
+									<svg class="like card__like active">
+										<use xlink:href="./assets/img/icons/sprite.svg#like"></use>
+									</svg>
+									<img
+										src="./assets/img/content/sneaker1.jpg"
+										alt="Balenciaga sneaker"
+									/>
+								</div>
+								<div class="card__info">
+									<h6 class="card__title">Balenciaga</h6>
+									<div class="card__rating-wrapper">
+										<div class="card__rating-icon">
+											<svg class="star">
+												<use
+													xlink:href="./assets/img/icons/sprite.svg#star"
+												></use>
+											</svg>
+										</div>
+										<div class="card__rating">4,9</div>
+										<div class="card__reviews">(123 reviews)</div>
+									</div>
+									<div class="card__price-wrapper">
+										<div class="card__old-price">$1100</div>
+										<div class="card__current-price">$999</div>
+										<button class="card__button active add-to-card">
+											<svg class="cart-icon">
+												<use
+													xlink:href="./assets/img/icons/sprite.svg#cart-icon"
+												></use>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card__img">
+									<svg class="like card__like active">
+										<use xlink:href="./assets/img/icons/sprite.svg#like"></use>
+									</svg>
+									<img
+										src="./assets/img/content/sneaker1.jpg"
+										alt="Balenciaga sneaker"
+									/>
+								</div>
+								<div class="card__info">
+									<h6 class="card__title">Balenciaga</h6>
+									<div class="card__rating-wrapper">
+										<div class="card__rating-icon">
+											<svg class="star">
+												<use
+													xlink:href="./assets/img/icons/sprite.svg#star"
+												></use>
+											</svg>
+										</div>
+										<div class="card__rating">4,9</div>
+										<div class="card__reviews">(123 reviews)</div>
+									</div>
+									<div class="card__price-wrapper">
+										<div class="card__old-price">$1100</div>
+										<div class="card__current-price">$999</div>
+										<button class="card__button active add-to-card">
+											<svg class="cart-icon">
+												<use
+													xlink:href="./assets/img/icons/sprite.svg#cart-icon"
+												></use>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card__img">
+									<svg class="like card__like active">
+										<use xlink:href="./assets/img/icons/sprite.svg#like"></use>
+									</svg>
+									<img
+										src="./assets/img/content/sneaker1.jpg"
+										alt="Balenciaga sneaker"
+									/>
+								</div>
+								<div class="card__info">
+									<h6 class="card__title">Balenciaga</h6>
+									<div class="card__rating-wrapper">
+										<div class="card__rating-icon">
+											<svg class="star">
+												<use
+													xlink:href="./assets/img/icons/sprite.svg#star"
+												></use>
+											</svg>
+										</div>
+										<div class="card__rating">4,9</div>
+										<div class="card__reviews">(123 reviews)</div>
+									</div>
+									<div class="card__price-wrapper">
+										<div class="card__old-price">$1100</div>
+										<div class="card__current-price">$999</div>
+										<button class="card__button active add-to-card">
+											<svg class="cart-icon">
+												<use
+													xlink:href="./assets/img/icons/sprite.svg#cart-icon"
+												></use>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card__img">
+									<svg class="like card__like active">
+										<use xlink:href="./assets/img/icons/sprite.svg#like"></use>
+									</svg>
+									<img
+										src="./assets/img/content/sneaker1.jpg"
+										alt="Balenciaga sneaker"
+									/>
+								</div>
+								<div class="card__info">
+									<h6 class="card__title">Balenciaga</h6>
+									<div class="card__rating-wrapper">
+										<div class="card__rating-icon">
+											<svg class="star">
+												<use
+													xlink:href="./assets/img/icons/sprite.svg#star"
+												></use>
+											</svg>
+										</div>
+										<div class="card__rating">4,9</div>
+										<div class="card__reviews">(123 reviews)</div>
+									</div>
+									<div class="card__price-wrapper">
+										<div class="card__old-price">$1100</div>
+										<div class="card__current-price">$999</div>
+										<button class="card__button active add-to-card">
+											<svg class="cart-icon">
+												<use
+													xlink:href="./assets/img/icons/sprite.svg#cart-icon"
+												></use>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card__img">
+									<svg class="like card__like active">
+										<use xlink:href="./assets/img/icons/sprite.svg#like"></use>
+									</svg>
+									<img
+										src="./assets/img/content/sneaker1.jpg"
+										alt="Balenciaga sneaker"
+									/>
+								</div>
+								<div class="card__info">
+									<h6 class="card__title">Balenciaga</h6>
+									<div class="card__rating-wrapper">
+										<div class="card__rating-icon">
+											<svg class="star">
+												<use
+													xlink:href="./assets/img/icons/sprite.svg#star"
+												></use>
+											</svg>
+										</div>
+										<div class="card__rating">4,9</div>
+										<div class="card__reviews">(123 reviews)</div>
+									</div>
+									<div class="card__price-wrapper">
+										<div class="card__old-price">$1100</div>
+										<div class="card__current-price">$999</div>
+										<button class="card__button active add-to-card">
+											<svg class="cart-icon">
+												<use
+													xlink:href="./assets/img/icons/sprite.svg#cart-icon"
+												></use>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card__img">
+									<svg class="like card__like active">
+										<use xlink:href="./assets/img/icons/sprite.svg#like"></use>
+									</svg>
+									<img
+										src="./assets/img/content/sneaker1.jpg"
+										alt="Balenciaga sneaker"
+									/>
+								</div>
+								<div class="card__info">
+									<h6 class="card__title">Balenciaga</h6>
+									<div class="card__rating-wrapper">
+										<div class="card__rating-icon">
+											<svg class="star">
+												<use
+													xlink:href="./assets/img/icons/sprite.svg#star"
+												></use>
+											</svg>
+										</div>
+										<div class="card__rating">4,9</div>
+										<div class="card__reviews">(123 reviews)</div>
+									</div>
+									<div class="card__price-wrapper">
+										<div class="card__old-price">$1100</div>
+										<div class="card__current-price">$999</div>
+										<button class="card__button active add-to-card">
+											<svg class="cart-icon">
+												<use
+													xlink:href="./assets/img/icons/sprite.svg#cart-icon"
+												></use>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card__img">
+									<svg class="like card__like active">
+										<use xlink:href="./assets/img/icons/sprite.svg#like"></use>
+									</svg>
+									<img
+										src="./assets/img/content/sneaker1.jpg"
+										alt="Balenciaga sneaker"
+									/>
+								</div>
+								<div class="card__info">
+									<h6 class="card__title">Balenciaga</h6>
+									<div class="card__rating-wrapper">
+										<div class="card__rating-icon">
+											<svg class="star">
+												<use
+													xlink:href="./assets/img/icons/sprite.svg#star"
+												></use>
+											</svg>
+										</div>
+										<div class="card__rating">4,9</div>
+										<div class="card__reviews">(123 reviews)</div>
+									</div>
+									<div class="card__price-wrapper">
+										<div class="card__old-price">$1100</div>
+										<div class="card__current-price">$999</div>
+										<button class="card__button active add-to-card">
+											<svg class="cart-icon">
+												<use
+													xlink:href="./assets/img/icons/sprite.svg#cart-icon"
+												></use>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card__img">
+									<svg class="like card__like active">
+										<use xlink:href="./assets/img/icons/sprite.svg#like"></use>
+									</svg>
+									<img
+										src="./assets/img/content/sneaker1.jpg"
+										alt="Balenciaga sneaker"
+									/>
+								</div>
+								<div class="card__info">
+									<h6 class="card__title">Balenciaga</h6>
+									<div class="card__rating-wrapper">
+										<div class="card__rating-icon">
+											<svg class="star">
+												<use
+													xlink:href="./assets/img/icons/sprite.svg#star"
+												></use>
+											</svg>
+										</div>
+										<div class="card__rating">4,9</div>
+										<div class="card__reviews">(123 reviews)</div>
+									</div>
+									<div class="card__price-wrapper">
+										<div class="card__old-price">$1100</div>
+										<div class="card__current-price">$999</div>
+										<button class="card__button active add-to-card">
+											<svg class="cart-icon">
+												<use
+													xlink:href="./assets/img/icons/sprite.svg#cart-icon"
+												></use>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card__img">
+									<svg class="like card__like active">
+										<use xlink:href="./assets/img/icons/sprite.svg#like"></use>
+									</svg>
+									<img
+										src="./assets/img/content/sneaker1.jpg"
+										alt="Balenciaga sneaker"
+									/>
+								</div>
+								<div class="card__info">
+									<h6 class="card__title">Balenciaga</h6>
+									<div class="card__rating-wrapper">
+										<div class="card__rating-icon">
+											<svg class="star">
+												<use
+													xlink:href="./assets/img/icons/sprite.svg#star"
+												></use>
+											</svg>
+										</div>
+										<div class="card__rating">4,9</div>
+										<div class="card__reviews">(123 reviews)</div>
+									</div>
+									<div class="card__price-wrapper">
+										<div class="card__old-price">$1100</div>
+										<div class="card__current-price">$999</div>
+										<button class="card__button active add-to-card">
+											<svg class="cart-icon">
+												<use
+													xlink:href="./assets/img/icons/sprite.svg#cart-icon"
+												></use>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card__img">
+									<svg class="like card__like active">
+										<use xlink:href="./assets/img/icons/sprite.svg#like"></use>
+									</svg>
+									<img
+										src="./assets/img/content/sneaker1.jpg"
+										alt="Balenciaga sneaker"
+									/>
+								</div>
+								<div class="card__info">
+									<h6 class="card__title">Balenciaga</h6>
+									<div class="card__rating-wrapper">
+										<div class="card__rating-icon">
+											<svg class="star">
+												<use
+													xlink:href="./assets/img/icons/sprite.svg#star"
+												></use>
+											</svg>
+										</div>
+										<div class="card__rating">4,9</div>
+										<div class="card__reviews">(123 reviews)</div>
+									</div>
+									<div class="card__price-wrapper">
+										<div class="card__old-price">$1100</div>
+										<div class="card__current-price">$999</div>
+										<button class="card__button active add-to-card">
+											<svg class="cart-icon">
+												<use
+													xlink:href="./assets/img/icons/sprite.svg#cart-icon"
+												></use>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card__img">
+									<svg class="like card__like active">
+										<use xlink:href="./assets/img/icons/sprite.svg#like"></use>
+									</svg>
+									<img
+										src="./assets/img/content/sneaker1.jpg"
+										alt="Balenciaga sneaker"
+									/>
+								</div>
+								<div class="card__info">
+									<h6 class="card__title">Balenciaga</h6>
+									<div class="card__rating-wrapper">
+										<div class="card__rating-icon">
+											<svg class="star">
+												<use
+													xlink:href="./assets/img/icons/sprite.svg#star"
+												></use>
+											</svg>
+										</div>
+										<div class="card__rating">4,9</div>
+										<div class="card__reviews">(123 reviews)</div>
+									</div>
+									<div class="card__price-wrapper">
+										<div class="card__old-price">$1100</div>
+										<div class="card__current-price">$999</div>
+										<button class="card__button active add-to-card">
+											<svg class="cart-icon">
+												<use
+													xlink:href="./assets/img/icons/sprite.svg#cart-icon"
+												></use>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card__img">
+									<svg class="like card__like active">
+										<use xlink:href="./assets/img/icons/sprite.svg#like"></use>
+									</svg>
+									<img
+										src="./assets/img/content/sneaker1.jpg"
+										alt="Balenciaga sneaker"
+									/>
+								</div>
+								<div class="card__info">
+									<h6 class="card__title">Balenciaga</h6>
+									<div class="card__rating-wrapper">
+										<div class="card__rating-icon">
+											<svg class="star">
+												<use
+													xlink:href="./assets/img/icons/sprite.svg#star"
+												></use>
+											</svg>
+										</div>
+										<div class="card__rating">4,9</div>
+										<div class="card__reviews">(123 reviews)</div>
+									</div>
+									<div class="card__price-wrapper">
+										<div class="card__old-price">$1100</div>
+										<div class="card__current-price">$999</div>
+										<button class="card__button active add-to-card">
+											<svg class="cart-icon">
+												<use
+													xlink:href="./assets/img/icons/sprite.svg#cart-icon"
+												></use>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card__img">
+									<svg class="like card__like active">
+										<use xlink:href="./assets/img/icons/sprite.svg#like"></use>
+									</svg>
+									<img
+										src="./assets/img/content/sneaker1.jpg"
+										alt="Balenciaga sneaker"
+									/>
+								</div>
+								<div class="card__info">
+									<h6 class="card__title">Balenciaga</h6>
+									<div class="card__rating-wrapper">
+										<div class="card__rating-icon">
+											<svg class="star">
+												<use
+													xlink:href="./assets/img/icons/sprite.svg#star"
+												></use>
+											</svg>
+										</div>
+										<div class="card__rating">4,9</div>
+										<div class="card__reviews">(123 reviews)</div>
+									</div>
+									<div class="card__price-wrapper">
+										<div class="card__old-price">$1100</div>
+										<div class="card__current-price">$999</div>
+										<button class="card__button active add-to-card">
+											<svg class="cart-icon">
+												<use
+													xlink:href="./assets/img/icons/sprite.svg#cart-icon"
+												></use>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div class="card">
+								<div class="card__img">
+									<svg class="like card__like active">
+										<use xlink:href="./assets/img/icons/sprite.svg#like"></use>
+									</svg>
+									<img
+										src="./assets/img/content/sneaker1.jpg"
+										alt="Balenciaga sneaker"
+									/>
+								</div>
+								<div class="card__info">
+									<h6 class="card__title">Balenciaga</h6>
+									<div class="card__rating-wrapper">
+										<div class="card__rating-icon">
+											<svg class="star">
+												<use
+													xlink:href="./assets/img/icons/sprite.svg#star"
+												></use>
+											</svg>
+										</div>
+										<div class="card__rating">4,9</div>
+										<div class="card__reviews">(123 reviews)</div>
+									</div>
+									<div class="card__price-wrapper">
+										<div class="card__old-price">$1100</div>
+										<div class="card__current-price">$999</div>
+										<button class="card__button active add-to-card">
+											<svg class="cart-icon">
+												<use
+													xlink:href="./assets/img/icons/sprite.svg#cart-icon"
+												></use>
+											</svg>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</main>
 			</div>
 		</div>
 

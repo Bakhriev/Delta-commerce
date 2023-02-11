@@ -19,15 +19,11 @@ body {
 	flex: 1 0 auto;
 }
 
-.footer {
-	flex: 0 0 auto;
-}
-
 .container {
-	max-width: 1230px;
+	max-width: 1260px;
 	margin: 0 auto;
 
-	padding: 0 15px;
+	padding: 0 30px;
 }
 
 .flex {
@@ -35,6 +31,11 @@ body {
 }
 
 .title {
+	font-size: 22px;
+	font-weight: 400;
+}
+
+.sort-title {
 	font-size: 20px;
 	color: $title;
 }
@@ -46,13 +47,14 @@ body {
 .sort-list {
 	display: flex;
 	flex-direction: column;
-	gap: 15px;
+	gap: 10px;
 	&__item {
 		display: flex;
 		align-items: flex-start;
 		gap: 10px;
 		user-select: none;
 		cursor: pointer;
+		padding: 5px;
 	}
 }
 
@@ -69,7 +71,7 @@ label {
 	position: fixed;
 	top: 0;
 	left: 0;
-	z-index: 2;
+	z-index: 10;
 	pointer-events: none;
 	width: 100%;
 	height: 100vh;

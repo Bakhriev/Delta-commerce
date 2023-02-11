@@ -2,6 +2,9 @@
 	width: 24px;
 	height: 24px;
 	display: block;
+	stroke: gray;
+	fill: #fff;
+	transition: fill 0.2s ease-in-out;
 }
 
 .search {
@@ -13,5 +16,30 @@
 .close {
 	width: 20px;
 	height: 20px;
+	display: block;
+}
+
+.cart-icon {
+	display: block;
+	width: 24px;
+	height: 24px;
+	fill: #99715d;
+	transition: fill 0.2s ease-in-out;
+}
+
+.star {
+	width: 24px;
+	height: 24px;
+	display: block;
+}
+.arrow-bottom {
+	display: block;
+	height: 20px;
+	width: 20px;
+}
+
+.garbage {
+	height: 18px;
+	width: 18px;
 	display: block;
 }

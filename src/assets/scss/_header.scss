@@ -2,6 +2,7 @@
 
 // header
 .header {
+	position: relative;
 	padding: 20px 0;
 	background-color: #fff;
 	max-width: 100%;
@@ -14,6 +15,14 @@
 
 		@media screen and (max-width: 768px) {
 			justify-content: space-between; //чтобы лого и бургер были по углам это их обертка
+		}
+	}
+
+	&__logo {
+		display: none;
+		margin-right: 20px;
+		@media screen and (max-width: 768px) {
+			display: block;
 		}
 	}
 
@@ -45,7 +54,7 @@
 			width: 250px;
 			min-height: 100vh;
 
-			background-color: rgba(31, 41, 55, 0.9);
+			background-color: rgb(59, 65, 74);
 
 			opacity: 0;
 			border-radius: 5px 0 0 5px;
@@ -60,18 +69,40 @@
 
 	&__actions {
 		display: flex;
+		width: 100%;
 		align-items: center;
 		gap: 20px;
 
 		@media screen and (max-width: 768px) {
-			margin-top: 30px; // даем отступ от .menu списка сверху
-
-			flex-direction: column; // Кнопки в столбик
+			margin-right: 20px;
 		}
 	}
+
+	&__btn {
+		position: relative;
+		background-color: #f7f1ee;
+		border-radius: 15px;
+		padding: 5px;
+		&-count {
+			position: absolute;
+			display: grid;
+			place-items: center;
+			top: -5px;
+			right: 0;
+			background-color: #222;
+			border-radius: 50%;
+			height: 15px;
+			width: 15px;
+			font-size: 10px;
+			color: #fff;
+		}
+	}
+
 	&__search {
 		position: relative;
 		max-width: 300px;
+		width: 100%;
+		margin-right: 20px;
 		&-close {
 			position: absolute;
 			right: 35px;
@@ -94,8 +125,7 @@
 	}
 }
 .menu {
-	margin-left: 40px;
-
+	margin-right: 20px;
 	@media screen and (max-width: 768px) {
 		margin-left: 0; // Убираем левый маржин при мобильном меню
 	}
@@ -117,7 +147,7 @@
 		transition: color 0.2s ease-in-out;
 
 		&.active {
-			color: #222;
+			color: rgb(200, 190, 190);
 
 			&::after {
 				transform: scale(1);
@@ -125,7 +155,7 @@
 		}
 
 		&:hover {
-			color: #222;
+			color: rgb(200, 190, 190);
 		}
 
 		&::after {
@@ -137,7 +167,7 @@
 			height: 2px;
 			width: 100%;
 
-			background: #222;
+			background: rgb(200, 190, 190);
 			border-radius: 5px;
 			transform-origin: right top;
 			transform: scale(0, 1);
