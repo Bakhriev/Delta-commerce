@@ -1,34 +1,45 @@
 @import "./vars";
 
 .aside-left {
-	position: sticky;
-	top: 0;
-	left: 0;
 	flex-shrink: 0;
 	max-width: 220px;
 	width: 100%;
-	min-height: 100%;
+	min-height: 100vh;
 	padding: 28px 30px;
 	display: flex;
 	flex-direction: column;
-	z-index: 2;
+	gap: 20px;
+	transition: transform 0.2s ease-in-out;
+
+	z-index: 5;
 	overflow: auto;
 
 	background-color: #fff;
 
 	border-right: 1px solid $gray;
+	@media screen and (max-width: 768px) {
+		position: fixed;
+		transform: translateX(-100%);
+		&.active {
+			transform: translateX(0);
+		}
+	}
 }
 
 .aside-left {
-	display: flex;
-	flex-direction: column;
-	gap: 20px;
+	overflow: auto;
 	&__logo {
+		position: relative;
 		margin-bottom: 20px;
 		color: #222;
 		font-weight: 600;
 		font-size: 22px;
 		text-align: center;
+		span {
+			height: 2px;
+			width: 100%;
+			background-color: #222;
+		}
 	}
 
 	// All Items Sort-Rating-Price

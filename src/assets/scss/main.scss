@@ -7,6 +7,7 @@
 @import "./header";
 @import "./aside-left";
 @import "./icons";
+@import "./favorites";
 
 .main {
 	padding-top: 30px;
@@ -15,17 +16,11 @@
 	}
 }
 
-.filter-wrapper {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-}
 .filter-menu {
 	display: flex;
-	align-items: center;
 	flex-wrap: wrap;
+	align-items: center;
 	gap: 15px;
-	margin-right: 20px;
 	&__item {
 		padding: 10px;
 		border: 1px solid $gray;
@@ -125,7 +120,11 @@
 		flex-basis: 45%;
 	}
 	@media screen and (max-width: 805px) {
-		flex-basis: 350px;
+		flex-basis: 260px;
+		margin: 0 auto;
+	}
+	@media screen and (max-width: 569px) {
+		flex-basis: 320px;
 		margin: 0 auto;
 	}
 	&__like {
@@ -190,7 +189,7 @@
 	&__button {
 		&.active {
 			background-color: rgb(24, 207, 140);
-			.cart {
+			.cart-icon {
 				fill: #fff;
 			}
 		}
